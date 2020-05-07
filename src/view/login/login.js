@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { List, InputItem, Button } from 'antd-mobile'
+import { List, InputItem, Button, Tabs, WhiteSpace, Badge } from 'antd-mobile'
 import { createForm, formShape } from 'rc-form'
 import { setToken } from '@utils/cookies'
-import '@assets/less/login/login.less'
+//import '@assets/less/login/login.less'
+import './login.less'
+const tabs = [{ title: <Badge>手机</Badge> }, { title: <Badge>邮箱</Badge> }]
+
 class Login extends Component {
   componentDidMount() {
     /* 原 http%3A%2F%2Fwww.w3school.com.cn%2FMy%20first%2F
@@ -110,9 +113,9 @@ class Login extends Component {
   render() {
     const { getFieldProps } = this.props.form
     return (
-      <div className="login-content">
-        <img src={require('@assets/images/logo.png')} alt="/" />
-        <div className={`login-box ${this.state.ani1 ? 'ani1' : ''}`}>
+      <div className="loginContent">
+        {/*   <img src={require('@assets/images/logo.png')} alt="/" /> */}
+        {/*  <div className={`login-box ${this.state.ani1 ? 'ani1' : ''}`}>
           {this.state.textSwitch ? (
             [
               <p key="1">账号登录</p>,
@@ -162,7 +165,77 @@ class Login extends Component {
             <img src={require('@assets/images/puff.svg')} />
             <p>{this.state.text}</p>
           </div>
-        )}
+        )} */}
+        <div className="loginbox">
+          <Tabs
+            tabs={tabs}
+            initialPage={0}
+            tabBarUnderlineStyle={{
+              background: '#2C5EE1',
+              height: '3px',
+              width: '30%',
+              marginLeft: '9%',
+              //marginRight: '10%',
+              marginBottom: '-5px',
+            }}
+            tabBarTextStyle={{ fontSize: '16px' }}
+            tabBarBackgroundColor="none"
+            tabBarActiveTextColor="#2C5EE1"
+            tabBarInactiveTextColor="#333333"
+            onChange={(tab, index) => {
+              console.log('onChange', index, tab)
+            }}
+            onTabClick={(tab, index) => {
+              console.log('onTabClick', index, tab)
+            }}
+          >
+            <div
+              style={{
+                width: 'auto',
+              }}
+              className="loginform"
+            >
+              <List>
+                <InputItem
+                  {...getFieldProps('userName')}
+                  placeholder="请输入手机号码"
+                >
+                  <i className="fa fa-user-circle-o" />
+                </InputItem>
+                <InputItem
+                  type="password"
+                  {...getFieldProps('passwrod')}
+                  placeholder="请输入密码"
+                >
+                  <i className="fa fa-expeditedssl" />
+                </InputItem>
+              </List>
+            </div>
+            <div className="loginform">
+              {' '}
+              <List>
+                <InputItem
+                  {...getFieldProps('userName')}
+                  placeholder="请输入邮箱"
+                >
+                  <i className="fa fa-user-circle-o" />
+                </InputItem>
+                <InputItem
+                  type="password"
+                  {...getFieldProps('passwrod')}
+                  placeholder="请输入密码"
+                >
+                  <i className="fa fa-expeditedssl" />
+                </InputItem>
+              </List>
+            </div>
+          </Tabs>
+          <div className="login-button" key="3">
+            <Button type="primary" size="small" onClick={this.onSubmit}>
+              登录
+            </Button>
+          </div>
+        </div>
       </div>
     )
   }
