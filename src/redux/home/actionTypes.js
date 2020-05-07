@@ -1,0 +1,2 @@
+export const CHANGE_BTN_TEXT = 'CHANGE_BTN_TEXT'
+export const STATE_COLOR = 'STATE_COLOR'
