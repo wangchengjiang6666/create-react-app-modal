@@ -2,15 +2,27 @@ import React, { Component } from 'react'
 import { List, InputItem, Button, Tabs, WhiteSpace, Badge } from 'antd-mobile'
 import { createForm, formShape } from 'rc-form'
 import { setToken } from '@utils/cookies'
+import { connect } from 'react-redux'
 //import '@assets/less/login/login.less'
 import './login.less'
-const tabs = [{ title: <Badge>手机</Badge> }, { title: <Badge>邮箱</Badge> }]
 
+import { handleLogin } from '../../redux/login/action'
+import req from '../../api/req'
+const tabs = [{ title: <Badge>手机</Badge> }, { title: <Badge>邮箱</Badge> }]
+/* @connect(
+  ({ login }) => ({
+    loginData: login.loginData,
+  }),
+  null
+) */
 class Login extends Component {
   componentDidMount() {
     /* 原 http%3A%2F%2Fwww.w3school.com.cn%2FMy%20first%2F
     输出  http://www.w3school.com.cn/My first/ */
     console.log(this.props, decodeURIComponent(this.props.match.params.url)) //对编码后的URI进行解码
+  }
+  componentDidUpdate() {
+    console.log('1111111111', this.props.loginData)
   }
   state = {
     ani1: false,
@@ -84,7 +96,7 @@ class Login extends Component {
       // console.log(error);
       if (!error) {
         console.log('ok', values)
-        this.startAnimation().then((res) => {
+        /*  this.startAnimation().then((res) => {
           this.fnlogin(values)
             .then((res) => {
               setToken(res.token)
@@ -104,7 +116,15 @@ class Login extends Component {
                 this.endAnimation(err)
               }, 3000)
             })
+        }) */
+        req.post('/reset/login', values).then((res) => {
+          console.log(res)
+          if (res.code == 1) {
+            setToken(res.data[0].token)
+            this.props.history.push('/')
+          }
         })
+        //this.props.handleLogin(values)
       } else {
         console.log('error', error, values)
       }
@@ -197,14 +217,14 @@ class Login extends Component {
             >
               <List>
                 <InputItem
-                  {...getFieldProps('userName')}
+                  {...getFieldProps('username')}
                   placeholder="请输入手机号码"
                 >
                   <i className="fa fa-user-circle-o" />
                 </InputItem>
                 <InputItem
                   type="password"
-                  {...getFieldProps('passwrod')}
+                  {...getFieldProps('password')}
                   placeholder="请输入密码"
                 >
                   <i className="fa fa-expeditedssl" />
@@ -215,14 +235,14 @@ class Login extends Component {
               {' '}
               <List>
                 <InputItem
-                  {...getFieldProps('userName')}
+                  {...getFieldProps('username')}
                   placeholder="请输入邮箱"
                 >
                   <i className="fa fa-user-circle-o" />
                 </InputItem>
                 <InputItem
                   type="password"
-                  {...getFieldProps('passwrod')}
+                  {...getFieldProps('password')}
                   placeholder="请输入密码"
                 >
                   <i className="fa fa-expeditedssl" />
@@ -240,4 +260,7 @@ class Login extends Component {
     )
   }
 }
-export default createForm()(Login)
+//export default createForm()(Login)
+export default connect(({ login }) => ({ loginData: login.loginData }), {
+  handleLogin,
+})(createForm()(Login))

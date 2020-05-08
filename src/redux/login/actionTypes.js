@@ -1,0 +1,2 @@
+export const LOGIN_MESSAGE = 'LOGIN_MESSAGE'
+export const STATE_COLOR = 'STATE_COLOR'

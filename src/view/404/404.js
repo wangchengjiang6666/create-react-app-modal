@@ -1,15 +1,15 @@
-/*  import React, { Component } from 'react'
+import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as allAction from '@redux/action'
+import * as allAction from '../../redux/login/action'
 import { Button } from 'antd-mobile'
 
-@connect(
-  (state) => ({
-    color: state.color,
+/* @connect(
+  (login) => ({
+    color: login.color,
   }),
   (dispatch) => bindActionCreators(allAction, dispatch)
-)
+) */
 class NotFound extends Component {
   constructor(...props) {
     super(...props)
@@ -45,5 +45,9 @@ class NotFound extends Component {
   }
 }
 
-export default NotFound
- */
+export default connect(
+  (login) => ({
+    color: login.color,
+  }),
+  (dispatch) => bindActionCreators(allAction, dispatch)
+)(NotFound)

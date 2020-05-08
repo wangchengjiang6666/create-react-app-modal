@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-const TOKEN_KEY = 'x-sso-token'
+const TOKEN_KEY = 'token'
 
 export function getToken() {
   return Cookies.get(TOKEN_KEY)

@@ -8,7 +8,6 @@ const store = createStore()
 function App() {
   return (
     <div className="App">
-      <div className="box"></div>
       <Provider store={store}>
         <Routers />
       </Provider>

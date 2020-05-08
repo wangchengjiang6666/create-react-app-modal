@@ -5,7 +5,7 @@ const initState = {
   color: '#333',
 }
 
-export default (state = initState, action) => {
+const home = (state = initState, action) => {
   switch (action.type) {
     case T.CHANGE_BTN_TEXT:
       return {
@@ -24,3 +24,4 @@ export default (state = initState, action) => {
     // break;
   }
 }
+export default home
