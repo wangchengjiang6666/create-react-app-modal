@@ -5,16 +5,11 @@ import './index.less'
 class Home extends Component {
   render() {
     return (
-      <div className="mainContent">
-        {/*  <div className="mainBody">
-          <Switch>
-            <Route path="/home" component={Home}></Route>
-            <Route path="/list" component={List}></Route>
-            <AuthRoute path="/about" component={About}></AuthRoute>
-            <Redirect to="/home"></Redirect>
-          </Switch>
-        </div> */}
-        首页
+      <div className="homeContent">
+        <div className="homeHeader">
+          <img src={require('@assets/images/muniLogi.png')} alt="" />
+        </div>
+        <div className="myMoney"></div>
       </div>
     )
   }
