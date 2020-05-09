@@ -21,20 +21,25 @@ class Index extends Component {
           </Switch>
         </div>
         <div className="mainFooter">
-          <NavLink to="/home" activeClassName="z-act">
-            首页
+          <NavLink to="/home" activeClassName="z-act" className="footerItem">
+            <i className="iconimg1"></i>
+            <span>首页</span>
           </NavLink>
-          <NavLink to="/price" activeClassName="z-act">
-            行情
+          <NavLink to="/price" activeClassName="z-act" className="footerItem">
+            <i className="iconimg2"></i>
+            <span>行情</span>
           </NavLink>
-          <NavLink to="/market" activeClassName="z-act">
-            市场
+          <NavLink to="/market" activeClassName="z-act" className="footerItem">
+            <i className="iconimg3"></i>
+            <span>市场</span>
           </NavLink>
-          <NavLink to="/found" activeClassName="z-act">
-            发现
+          <NavLink to="/found" activeClassName="z-act" className="footerItem">
+            <i className="iconimg4"></i>
+            <span>发现</span>
           </NavLink>
-          <NavLink to="/mine" activeClassName="z-act">
-            我的
+          <NavLink to="/mine" activeClassName="z-act" className="footerItem">
+            <i className="iconimg5"></i>
+            <span>我的</span>
           </NavLink>
         </div>
       </div>
