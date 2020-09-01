@@ -1,8 +1,8 @@
-import * as loginReturn from './actionTypes'
-import req from '../../api/req'
+import * as loginReturn from "./actionTypes"
+import req from "../../api/req"
 export const handleLogin = (text) => {
   return async (dispatch) => {
-    let result = await req.post('/reset/login', text)
+    let result = await req.post("/login", text)
     dispatch({
       type: loginReturn.LOGIN_MESSAGE,
       loginData: result.data,

@@ -1,6 +1,6 @@
-import React from 'react'
-import Loadable from 'react-loadable'
-import Loadings from '@components/loading'
+import React from "react"
+import Loadable from "react-loadable"
+import Loadings from "@components/loading/loading.js"
 //通用的过度组件
 const loadingComponent = () => {
   return (

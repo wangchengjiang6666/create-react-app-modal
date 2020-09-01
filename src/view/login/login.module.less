@@ -1,0 +1,210 @@
+.loginContent {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: linear-gradient(
+    180deg,
+    rgba(41, 44, 49, 1) 0%,
+    rgba(25, 27, 30, 1) 100%
+  );
+
+  .loginbox {
+    margin-top: 236px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    .loginTitle {
+      color: #fff;
+      font-size: 52px;
+      font-weight: 500;
+    }
+    .typeLogin {
+      margin-top: 80px;
+      span {
+        color: #80899f;
+        font-size: 28px;
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        position: relative;
+      }
+      span:first-of-type {
+        margin-right: 108px;
+      }
+      .activePhone {
+        color: #fdb200;
+      }
+      .activePhone::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+
+        width: 44px;
+        height: 4px;
+        background: #f08412;
+      }
+      .activeEmail {
+        color: #fdb200;
+      }
+      .activeEmail::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        bottom: 0;
+        width: 44px;
+        height: 4px;
+        background: #f08412;
+      }
+    }
+    .phone {
+      display: flex;
+      border-bottom: 1px solid #424857;
+      height: 80px;
+      margin-top: 80px;
+      .phoneLeft {
+        display: flex;
+        align-items: center;
+        width: 100px;
+
+        span {
+          font-size: 28px;
+          color: #fff;
+          margin-right: 18px;
+        }
+        i {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 12px solid #fff;
+          margin-top: 4px;
+        }
+      }
+      .phonerRight {
+        flex: 1;
+        background-color: transparent;
+        height: 80px;
+
+        input {
+          color: #5b616f;
+          font-size: 28px;
+        }
+      }
+    }
+    .password {
+      border-bottom: 1px solid #424857;
+      height: 80px;
+      background-color: transparent;
+      margin-top: 60px;
+      .passwordItem {
+        background-color: transparent;
+        height: 80px;
+        input {
+          height: 80px;
+          color: #5b616f;
+          font-size: 28px;
+        }
+      }
+    }
+    input::-webkit-input-placeholder {
+      font-weight: 400;
+      color: rgba(91, 97, 111, 1);
+      font-size: 28px;
+    }
+  }
+  .login-button {
+    margin-top: 84px;
+  }
+  /*  & > div {
+    width: 650px;
+   
+
+    position: absolute;
+    top: 400px;
+
+    left: 0;
+    right: 0;
+     margin: auto;
+  } */
+  // background: url('../../assets/images/backgrounds.jpg') no-repeat;
+  /*  animation-name: imgX;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  -webkit-perspective: 800px;
+  & > div {
+    width: 650px;
+    // height: 800px;
+    //padding: 100px 50px;
+
+    position: absolute;
+    top: 400px;
+
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .login-button {
+    width: 250px;
+    animation-name: greenPulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    margin: 50px auto;
+    a {
+      height: 60px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+  .am-tabs-default-bar-top .am-tabs-default-bar-content {
+    width: 200px;
+    div:first-of-type {
+      margin-right: 20px !important;
+    }
+  }
+  .loginform {
+    margin-top: 50px;
+    .am-list-item.am-input-item {
+      height: 100px !important;
+
+      .am-input-control {
+        height: 100%;
+        input {
+          font-size: 30px;
+          height: 100%;
+        }
+      }
+    }
+    .am-list-item .am-input-label.am-input-label-5 {
+      text-align: center !important;
+    }
+    .fa {
+      font-size: 40px !important;
+    }
+  }
+  #m-tabs-1-1 {
+    width: auto !important;
+  }
+  .am-tabs-default-bar-top .am-tabs-default-bar-tab::after {
+    height: 0 !important;
+  } */
+}
+.am-toast-text.am-toast-text-icon {
+  width: 150px;
+  height: 150px;
+}
+.am-toast-notice-content .am-toast-text {
+  background-color: inherit !important;
+}
+.am-icon-lg {
+  width: 100px;
+  height: 100px;
+}

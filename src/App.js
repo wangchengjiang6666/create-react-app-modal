@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react"
+import "./utils/gt.js"
 //import logo from './logo.svg'
 //import './App.css'
-import { Provider } from 'react-redux'
-import { Routers } from '@router' // router 路由配置
-import createStore from '@redux/store'
+import { Provider } from "react-redux"
+import { Routers } from "@router" // router 路由配置
+import createStore from "@redux/store"
 const store = createStore()
 function App() {
   return (

@@ -1,13 +1,13 @@
-const { createProxyMiddleware } = require('http-proxy-middleware')
+const { createProxyMiddleware } = require("http-proxy-middleware")
 module.exports = function (app) {
   app.use(
-    '/reset',
+    "/api",
     createProxyMiddleware({
-      target: 'http://119.8.127.28:9091/',
+      target: "http://hc-app-api.ap-southeast-1.elasticbeanstalk.com",
       changeOrigin: true,
-      pathRewrite: {
-        '^/reset': '',
-      },
+      /*  pathRewrite: {
+        "^/reset": "",
+      }, */
     })
   )
 }

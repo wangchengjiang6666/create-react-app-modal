@@ -1,7 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import config from './config'
-import InterCeptor from '@utils/router.interceptor'
+import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import config from "./config"
+import InterCeptor from "@utils/router.interceptor"
 
 /**
  * '/' 根组件
@@ -30,7 +30,7 @@ export function RouteView(data) {
           render={(props) => (
             // pass the sub-routes down to keep nesting
             <Route>
-              {/* <item.component {...props} routes={item.routes} /> */}
+              {/*  <item.component {...props} routes={item.routes} /> */}
               <InterCeptor
                 config={config}
                 routes={item}
